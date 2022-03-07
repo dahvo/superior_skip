@@ -1,12 +1,25 @@
 from .base import *  # noqa
-from .base import env
+from .base import env 
+import environ ##replaced to match gcp doc example
+from urllib.parse import urlparse
+from google.cloud import secretmanager
 
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["superiorskip.com"])
+APPENGINE_URL = env("APPENGINE_URL", default=None) ##SET FROM APP ENGINE ENV
+if APPENGINE_URL:
+    # Ensure the HTTPS is in the URL before it's used.
+    APPENGINE_URL = urlparse(APPENGINE_URL, "https").geturl()
+
+    ALLOWED_HOSTS = [APPENGINE_URL]
+    CSRF_TRUSTED_ORIGINS = [urlparse(APPENGINE_URL).netloc]
+    SECURE_SSL_REDIRECT = True
+else:
+    raise Exception("App engine not initialized")
+#ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["superiorskip.com"])
 
 # DATABASES
 # ------------------------------------------------------------------------------
