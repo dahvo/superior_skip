@@ -1,3 +1,14 @@
+docs
+locale
+compose
+local.yml
+cloud_sql_proxy
+pytest.ini
+README.md
+secrets
+.github
+.pytest_cache
+.dockerignore
 .editorconfig
 .gitattributes
 .github
@@ -7,5 +18,6 @@
 .pre-commit-config.yaml
 .readthedocs.yml
 .travis.yml
+.git
+setup.cfg
 venv
-docs

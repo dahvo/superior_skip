@@ -35,22 +35,22 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
-  docs:
-    image: superior_skip_local_docs
-    container_name: superior_skip_local_docs
-    platform: linux/x86_64
-    build:
-      context: .
-      dockerfile: ./compose/local/docs/Dockerfile
-    env_file:
-      - ./.envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./superior_skip:/app/superior_skip:z
-    ports:
-      - "9000:9000"
-    command: /start-docs
+  # docs:
+  #   image: superior_skip_local_docs
+  #   container_name: superior_skip_local_docs
+  #   platform: linux/x86_64
+  #   build:
+  #     context: .
+  #     dockerfile: ./compose/local/docs/Dockerfile
+  #   env_file:
+  #     - ./.envs/.local/.django
+  #   volumes:
+  #     - ./docs:/docs:z
+  #     - ./config:/app/config:z
+  #     - ./superior_skip:/app/superior_skip:z
+  #   ports:
+  #     - "9000:9000"
+  #   command: /start-docs
 
   node:
     build:
