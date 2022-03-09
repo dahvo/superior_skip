@@ -1,5 +1,0 @@
-# General
-# ------------------------------------------------------------------------------
-USE_DOCKER=yes
-IPYTHONDIR=/app/.ipython
-DATABASE_URL=postgres://MRMat75Fb7RsZ2HYrjzjqZwmY:rN38V7YpgLS8TPNwo7a59X64z@//cloudsql/superiorskip-343313:us-central1:superiorskip/django
