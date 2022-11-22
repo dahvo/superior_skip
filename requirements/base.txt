@@ -4,7 +4,7 @@ python-slugify==6.1.1  # https://github.com/un33k/python-slugify
 argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
 #redis==4.1.4  # https://github.com/redis/redis-py
 #hiredis==2.0.0  # https://github.com/redis/hiredis-py
-uvicorn[standard]==0.17.5  # https://github.com/encode/uvicorn
+uvicorn[standard]==0.20.0  # https://github.com/encode/uvicorn
 django-bootstrap5==21.3  # https://github.com/zostera/django-bootstrap5
 # Django
 # ------------------------------------------------------------------------------
